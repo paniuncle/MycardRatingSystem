@@ -30,7 +30,9 @@ class QueryController extends Controller
         //TODO CheckUser 和 QueryData  为何在我本地环境 永远返回false , bug ?
         //CheckUser($player); // 去掉查询时生成新用户的行为，以防止异常查询生成垃圾数据
 		
-        $player_data = QueryData($player); //获取玩家的数据
+        $player_data = QueryData($player); 
+		
+		
         
         //TODO 开发约定: QueryData($player); 业务层返回给Controller层 不要返回null ,可以与上面$EndResult 一样设置默认值,
         // 排名 和 胜率 之类数据库不能直接查到 或需要计算的字段, 在方法内部处理
