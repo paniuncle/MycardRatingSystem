@@ -95,6 +95,7 @@ function ClearingExp($A_exp,$B_exp,$usernameA,$usernameB,$draw){//清算历史�
 function QueryData($username){//查询用户数据
 	$mysql = M("rating_index");//连接数据库
 	$data = $mysql->where("username='".$username."'")->find();//查询某个用户的所有信息
+	
 	return $data;
 }
 
@@ -158,7 +159,18 @@ function CheckUser($username){//判断是否数据表中存在用户名
 	$mysql = M("rating_index");//连接数据库
 	$data = $mysql->where("username='".$username."'")->find();//查询某个用户的所有信息
 	if($data == NULL){
-		$new_data['username'] = $username;
+        $new_data = array(
+			'username' => $username,
+            'exp' => '800',
+            'pt' => '800',
+            'win' => '0',
+            'lose' => '0',
+            'game' => '0',
+            'status' => '0',
+            'o' => '0',
+            'u' => '0',
+			'last' => '0'
+        );
 		$mysql->data($new_data)->add();
 	}
 }
