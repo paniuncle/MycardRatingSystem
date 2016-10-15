@@ -11,9 +11,9 @@ class QueryController extends Controller
         
         //profile前端页面需要的全部数据  全部初始化为0    add by Joe 20160921
         $EndResult = array(
-            'exp' => '0',
+            'exp' => '800',
             'exp_rank' => '0',
-            'pt' => '0',
+            'pt' => '800',
             'arena_rank' => '0',
             'win' => '0',
             'lose' => '0',
