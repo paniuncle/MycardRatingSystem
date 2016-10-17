@@ -45,6 +45,7 @@ class QueryController extends Controller
             
             $EndResult['exp_rank'] = exp_rank($player);
             $EndResult['arena_rank'] = arena_rank($player) ;
+			
             $EndResult['win'] = $player_data['win'] ;
             $EndResult['lose'] = $player_data['lose'] ;
 			
